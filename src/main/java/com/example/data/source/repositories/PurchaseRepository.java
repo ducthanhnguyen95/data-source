@@ -31,8 +31,8 @@ public class PurchaseRepository {
     }
 
     public void storePurchase(Purchase purchase) {
-        String sql = "INSERT INTO purchase VALUES (?, ?, ?)";
-        jdbc.update(sql, new Random().nextInt(), purchase.getProduct(), purchase.getPrice());
+        String sql = "INSERT INTO purchase (product, price) VALUES  (?, ?)";
+        jdbc.update(sql, purchase.getProduct(), purchase.getPrice());
     }
 
 }
